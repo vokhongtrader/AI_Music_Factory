@@ -1,5 +1,20 @@
 # CHANGELOG
 
+## 2026-07-09 - Sprint P008 (Factory Runner)
+
+- Created `factory_runner.py` at `D:\Projects\` — single entry point for full workflow.
+- Created `AI_Core/project_manager/module_registry.py`:
+  - `FactoryModule` abstract base class with `NAME`, `DESCRIPTION`, `KEYWORDS`, `run()`, `matches()`.
+  - `ModuleRegistry` singleton — `register()` / `dispatch()` / `list_modules()`.
+  - Built-in `NullModule` (fallback) and `StatusModule` (phase/status reporter).
+  - `TaskContext` dataclass passed to every module run.
+- Created `factory_config.json` at `D:\Projects\` — master config (project, root, dry_run, auto_shutdown).
+- Wired `execute_task` step in `manager.py` to dispatch through `ModuleRegistry` instead of writing a static marker.
+- Updated `scripts/start_factory.ps1` — now calls `factory_runner.py` instead of placeholder TODO.
+- New modules self-register via `get_registry().register(MyModule())` — no edits to core runner needed.
+- Usage: `python factory_runner.py` or `.\scripts\start_factory.ps1`.
+- Usage: `python factory_runner.py --list-modules` to inspect registered modules.
+
 ## 2026-07-09 - Sprint P007 (GitHub Connection)
 
 - Created public GitHub repository `vokhongtrader/AI_Music_Factory`.
@@ -165,3 +180,9 @@
 - Executed factory run `run-20260709-161453` with status `success`
 - Progress recorded: 100.0%
 - Notes: completed
+
+## 2026-07-09 - Sprint P003 Factory Runtime
+
+- Executed factory run `run-20260709-163735` with status `running`
+- Progress recorded: 44.4%
+- Notes: Workflow reached report step

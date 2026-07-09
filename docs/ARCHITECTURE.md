@@ -58,7 +58,42 @@ flowchart LR
 3. Evaluation outcomes from `judge/` feed back into knowledge updates.
 4. Continuous improvement is managed without tightly coupling knowledge to runtime code.
 
-## Future AI Factory Ecosystem
+## Factory Runner
+
+`factory_runner.py` at `D:\Projects\` is the single entry point for all automation.
+
+```
+python factory_runner.py                    # full workflow
+python factory_runner.py --dry-run          # no side effects
+python factory_runner.py --list-modules     # show registered modules
+.\scripts\start_factory.ps1                 # same via PowerShell
+```
+
+`factory_config.json` at `D:\Projects\` controls project, root path, dry_run, and auto_shutdown.
+
+### Module Registry
+
+`AI_Core/project_manager/module_registry.py` is the central module registry.
+
+Every feature module must subclass `FactoryModule` and register:
+
+```python
+from module_registry import FactoryModule, get_registry
+
+class MyModule(FactoryModule):
+    NAME = "my_module"
+    DESCRIPTION = "Does something"
+    KEYWORDS = ["keyword1", "keyword2"]
+
+    def run(self, context):
+        return "result"
+
+get_registry().register(MyModule())
+```
+
+The `execute_task` workflow step reads NEXT_TASK.md and dispatches to the first module whose `KEYWORDS` match the task content. If no module matches, `NullModule` fires as fallback.
+
+
 
 AI Music Factory is designed to interoperate with sibling factories in a broader ecosystem.
 
