@@ -1,0 +1,10 @@
+{
+  "notification": {
+    "channels": {
+      "telegram": true,
+      "discord": false,
+      "email": false,
+      "webhook": false
+    }
+  }
+}
