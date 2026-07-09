@@ -210,3 +210,21 @@
 - Executed factory run `run-20260709-165408` with status `running`
 - Progress recorded: 50.0%
 - Notes: Workflow in progress
+
+## 2026-07-09 - Sprint P008 Factory Runtime
+
+- Executed factory run `run-20260709-165408` with status `success`
+- Progress recorded: 100.0%
+- Notes: completed
+
+## 2026-07-09 - Sprint P008 Factory Runtime
+
+- Executed factory run `run-20260709-170356` with status `failed`
+- Progress recorded: 10.0%
+- Notes: 'charmap' codec can't encode character '\u2705' in position 2: character maps to <undefined>
+
+## 2026-07-09 - Sprint P008 Factory Runtime
+
+- Executed factory run `run-20260709-170422` with status `running`
+- Progress recorded: 50.0%
+- Notes: Workflow in progress

@@ -1,23 +1,26 @@
 # NEXT TASK
 
-## Sprint P009 — Module Skeletons & Interface Contracts
+## Sprint P009 — Factory Automation Architecture
 
-Define executable skeletons and interface contracts for all AI Music Factory modules.
-Each module must expose a `FactoryModule` subclass registered in the global `ModuleRegistry`.
+### Mục tiêu
+Hoàn thiện hệ thống tự động hóa Factory:
+- Hiển thị tiếng Việt trong khi chạy
+- Tạo LAST_RUN.md sau mỗi lần chạy
+- scripts/start_factory.ps1 là entry point duy nhất từ Windows
+- Không cần copy/paste hay chạy lệnh thủ công
 
-### Modules to scaffold
+### Quy tắc làm việc
+1. Claude chỉ ghi NEXT_TASK.md để định nghĩa task
+2. Windows chạy: `.\scripts\start_factory.ps1`
+3. factory_runner.py tự động thực hiện toàn bộ workflow
+4. Mỗi sprint kết thúc bằng LAST_RUN.md và git push
 
-- `AI_Music_Factory/core/` — orchestration runtime, `CoreModule`
-- `AI_Music_Factory/composer/` — music composition, `ComposerModule`  
-- `AI_Music_Factory/lyrics/` — lyric generation, `LyricsModule`
-- `AI_Music_Factory/voice/` — vocal production, `VoiceModule`
-- `AI_Music_Factory/judge/` — quality evaluation, `JudgeModule`
-- `AI_Music_Factory/telegram/` — user interaction, `TelegramModule`
-- `AI_Music_Factory/export/` — output packaging, `ExportModule`
+### Trạng thái
+- Factory Runner: ✅ hoàn chỉnh
+- Vietnamese mode: ✅ hoàn chỉnh
+- LAST_RUN.md: ✅ hoàn chỉnh
+- Permission Policy: ✅ hoàn chỉnh
+- Auto test + backup + git + telegram: ✅ hoàn chỉnh
 
-### Requirements
-
-- Each module has a `__init__.py` that imports and exports its `FactoryModule` subclass.
-- Each module registers itself with `get_registry()` on import.
-- No AI model calls in this sprint — stubs only.
-- `factory_runner.py --list-modules` must show all seven modules after this sprint.
+### Sprint tiếp theo (P010)
+Xây dựng module skeletons cho 7 module AI Music Factory.

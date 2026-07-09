@@ -2,50 +2,94 @@
 
 AI Music Factory is a long-term modular platform for building and operating AI-powered music production workflows.
 
-Sprint P001 introduced the architecture baseline for an external AI Project Manager.
-Sprint P002 extends that architecture into a centralized Factory Manager control center.
-Sprint P003 and P004 move Factory Manager from architecture to executable runtime operations.
-Sprint P005 adds Notification Service implementation for factory reporting.
-Sprint P006 formalizes AI_Music_Factory as an official Git repository.
-Sprint P007 connects AI_Music_Factory to GitHub and publishes the baseline repository.
+Sprint P008 delivers **Factory Runner** — single-command, fully automated workflow engine.
 
-This repository currently contains **Sprint 0 (Foundation)** only.
+## Quick Start
 
-## Sprint 0 Scope
+```powershell
+# Run full factory workflow (one command)
+python AI_Core\project_manager\factory_runner.py
 
-- Establish project architecture and folder boundaries
-- Create baseline governance and planning documents
-- Create project automation script placeholders
-- Define module roles and future integration paths
+# Via PowerShell
+.\scripts\start_factory.ps1
 
-## Out of Scope (Current)
+# Dry-run (no backup/git/push)
+python AI_Core\project_manager\factory_runner.py --dry-run
 
-- Music generation logic
-- Model training or inference pipelines
-- Audio processing implementation
-- Telegram bot runtime implementation
+# List registered modules
+python AI_Core\project_manager\factory_runner.py --list-modules
+```
 
-## Current Structure
+## Factory Workflow (10 steps, automatic)
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for full architecture details.
-See [docs/PROJECT_MANAGER.md](docs/PROJECT_MANAGER.md) for the automation workflow architecture in Sprint P001.
-See [../AI_Core/project_manager/FACTORY_MANAGER.md](../AI_Core/project_manager/FACTORY_MANAGER.md) for Sprint P002 Factory Manager control-center architecture.
+| Step | Action |
+|------|--------|
+| startup | Validate project root |
+| check_environment | Verify Python, Git, required files |
+| read_task | Load NEXT_TASK.md + PROJECT_STATUS.json |
+| execute_task | Dispatch to module via keyword match |
+| run_tests | Run test suite (unittest / pytest) |
+| update_report | Write REPORT, SESSION, CHANGELOG |
+| backup | Copy project to `D:\Projects\Backup\` |
+| git | Commit + push to GitHub |
+| telegram | Notify (skipped if not configured) |
+| shutdown | Optional OS shutdown (off by default) |
+
+## Permission Policy
+
+`factory_config.json` controls which steps auto-run:
+
+```json
+"permissions": {
+  "backup": true,
+  "git_commit": true,
+  "git_push": true,
+  "run_tests": true,
+  "telegram": true,
+  "shutdown": false
+}
+```
+
+## Registering a New Module
+
+```python
+from module_registry import FactoryModule, get_registry
+
+class ComposerModule(FactoryModule):
+    NAME = "composer"
+    KEYWORDS = ["compose", "melody", "music"]
+
+    def run(self, context):
+        return "composed"
+
+get_registry().register(ComposerModule())
+```
+
+## Sprint History
+
+- Sprint 0: Foundation architecture
+- Sprint P001: AI Project Manager architecture
+- Sprint P002: Factory Manager control center architecture
+- Sprint P003/P004: Runtime flow implemented and tested
+- Sprint P005: Notification Service (Telegram-first)
+- Sprint P006: Git repository initialized
+- Sprint P007: GitHub repository connected
+- Sprint P008: Factory Runner — single-command end-to-end automation
+
+## Structure
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for full architecture.
 
 ## Working Rules
 
 - Work directly in this repository
 - No temporary workspace generation
-- No zip packaging
 - Foundation first, implementation later
 
-## Sprint Status
+## Last Factory Run
 
-- Sprint 0: complete
-- Sprint P001: architecture setup for AI Project Manager complete
-- Sprint P002: Factory Manager architecture expanded as operation center
-- Sprint P003: core runtime flow implemented and tested
-- Sprint P004: scheduler/decision/resource/monitor completed for real factory control
-- Sprint P005: Notification Service implemented with Telegram-first extensible channel design
-- Sprint P006: Git repository initialized, baseline commit/tag process established
-- Sprint P007: GitHub repository created, origin connected, main and v0.1.0 pushed
-- Current focus: Factory Manager architecture only (no AI Music Factory feature development)
+- run_id: `run-20260709-165408`
+- status: success
+- phase: Sprint P008
+- duration: 7.6s
+- updated_utc: 2026-07-09 16:54
