@@ -88,8 +88,8 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for full architecture.
 
 ## Last Factory Run
 
-- run_id: `run-20260709-225409`
+- run_id: `run-20260709-225517`
 - status: success
 - phase: Sprint P010
-- duration: 38.6s
-- updated_utc: 2026-07-09 22:54
+- duration: 18.4s
+- updated_utc: 2026-07-09 22:55
