@@ -7,6 +7,7 @@ Sprint P002 extends that architecture into a centralized Factory Manager control
 Sprint P003 and P004 move Factory Manager from architecture to executable runtime operations.
 Sprint P005 adds Notification Service implementation for factory reporting.
 Sprint P006 formalizes AI_Music_Factory as an official Git repository.
+Sprint P007 connects AI_Music_Factory to GitHub and publishes the baseline repository.
 
 This repository currently contains **Sprint 0 (Foundation)** only.
 
@@ -46,4 +47,5 @@ See [../AI_Core/project_manager/FACTORY_MANAGER.md](../AI_Core/project_manager/F
 - Sprint P004: scheduler/decision/resource/monitor completed for real factory control
 - Sprint P005: Notification Service implemented with Telegram-first extensible channel design
 - Sprint P006: Git repository initialized, baseline commit/tag process established
+- Sprint P007: GitHub repository created, origin connected, main and v0.1.0 pushed
 - Current focus: Factory Manager architecture only (no AI Music Factory feature development)

@@ -1,5 +1,12 @@
 # CHANGELOG
 
+## 2026-07-09 - Sprint P007 (GitHub Connection)
+
+- Created public GitHub repository `vokhongtrader/AI_Music_Factory`.
+- Connected local repository remote `origin` to GitHub.
+- Pushed branch `main` to GitHub.
+- Pushed tag `v0.1.0` to GitHub.
+
 ## 2026-07-09 - Sprint P006 (Git Repository Setup)
 
 - Initialized `AI_Music_Factory` as a Git repository (when missing).
