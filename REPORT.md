@@ -393,3 +393,21 @@ Continue future work on top of the published GitHub baseline.
 - duration_seconds: 0.00
 - notes: Workflow in progress
 - updated_at_utc: 2026-07-09T17:04:57.213579
+
+## Factory Run Update
+
+- run_id: run-20260709-170453
+- status: success
+- progress: 100.0%
+- duration_seconds: 7.63
+- notes: completed
+- updated_at_utc: 2026-07-09T17:05:01.631322
+
+## Factory Run Update
+
+- run_id: run-20260709-180518
+- status: running
+- progress: 50.0%
+- duration_seconds: 0.00
+- notes: Workflow in progress
+- updated_at_utc: 2026-07-09T18:05:25.772376

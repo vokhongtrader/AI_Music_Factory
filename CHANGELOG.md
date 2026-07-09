@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## 2026-07-10 - Sprint P010 (Telegram Notification Completion)
+
+- Created `AI_Core/notification/config.py` — credential file (BOT_TOKEN / CHAT_ID), user edits manually.
+- Rewrote `AI_Core/notification/telegram_service.py`:
+  - Reads `config.py` via `importlib.util` (priority over telegram.json).
+  - Prints "Telegram chưa cấu hình." and skips gracefully when token empty.
+  - `is_configured()` replaces `is_enabled()`.
+- Rewrote `AI_Core/notification/message_builder.py`:
+  - New functions return `str` with Vietnamese UTF-8 content and emojis.
+  - `build_start()`, `build_finish()`, `build_error()`, `build_status()`.
+  - Backward compat shims (`build_progress`, `build_success`, `build_shutdown`) return `MessagePayload`.
+- Rewrote `AI_Core/notification/notification_manager.py`:
+  - New API: `send_start()`, `send_finish()`, `send_error()`, `send_status()`.
+  - Backward compat: `notify_success()`, `notify_error()`, `notify_progress()`.
+- Updated `AI_Core/project_manager/factory_runner.py`:
+  - `send_start()` called at startup step.
+  - `send_finish()` called in finally (success) and telegram step.
+  - `send_error()` called in both except blocks.
+- Rewrote `AI_Core/notification/test_notification.py` — 21 tests, all PASS with empty token.
+- Created `AI_Core/notification/README.md` — setup guide (BotFather, CHAT_ID, test command).
+
 ## 2026-07-09 - Sprint P008 (Factory Runner)
 
 - Created `factory_runner.py` at `D:\Projects\` — single entry point for full workflow.
@@ -238,5 +259,17 @@
 ## 2026-07-09 - Sprint P009 Factory Runtime
 
 - Executed factory run `run-20260709-170453` with status `running`
+- Progress recorded: 50.0%
+- Notes: Workflow in progress
+
+## 2026-07-09 - Sprint P009 Factory Runtime
+
+- Executed factory run `run-20260709-170453` with status `success`
+- Progress recorded: 100.0%
+- Notes: completed
+
+## 2026-07-09 - Sprint P010 Factory Runtime
+
+- Executed factory run `run-20260709-180518` with status `running`
 - Progress recorded: 50.0%
 - Notes: Workflow in progress

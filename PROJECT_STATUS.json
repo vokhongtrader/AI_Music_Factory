@@ -1,7 +1,7 @@
 {
   "project": "AI_Music_Factory",
   "date": "2026-07-09",
-  "phase": "Sprint P009",
+  "phase": "Sprint P010",
   "status": "running",
   "sprint0": {
     "directory_architecture_created": true,
@@ -81,12 +81,12 @@
   },
   "next": "Continue development on top of the published GitHub baseline",
   "last_run": {
-    "run_id": "run-20260709-170453",
+    "run_id": "run-20260709-180518",
     "status": "running",
     "notes": "Workflow in progress",
     "duration_seconds": 0.0,
     "progress": 50.0,
-    "updated_at_utc": "2026-07-09T17:04:57.218104"
+    "updated_at_utc": "2026-07-09T18:05:25.775812"
   },
   "sprint_p009": {
     "vietnamese_mode": true,
@@ -95,5 +95,14 @@
     "start_factory_ps1_updated": true,
     "factory_runner_rewritten": true,
     "end_to_end_verified": true
+  },
+  "sprint_p010": {
+    "telegram_config_py_created": true,
+    "telegram_service_reads_config_py": true,
+    "message_builder_vietnamese_utf8": true,
+    "notification_manager_new_api": true,
+    "test_notification_21_pass": true,
+    "notification_readme_created": true,
+    "factory_runner_uses_new_api": true
   }
 }

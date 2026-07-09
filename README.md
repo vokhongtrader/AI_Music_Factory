@@ -22,18 +22,18 @@ python AI_Core\project_manager\factory_runner.py --list-modules
 
 ## Factory Workflow (10 steps, automatic)
 
-| Step | Action |
-|------|--------|
-| startup | Validate project root |
-| check_environment | Verify Python, Git, required files |
-| read_task | Load NEXT_TASK.md + PROJECT_STATUS.json |
-| execute_task | Dispatch to module via keyword match |
-| run_tests | Run test suite (unittest / pytest) |
-| update_report | Write REPORT, SESSION, CHANGELOG |
-| backup | Copy project to `D:\Projects\Backup\` |
-| git | Commit + push to GitHub |
-| telegram | Notify (skipped if not configured) |
-| shutdown | Optional OS shutdown (off by default) |
+| Step              | Action                                  |
+| ----------------- | --------------------------------------- |
+| startup           | Validate project root                   |
+| check_environment | Verify Python, Git, required files      |
+| read_task         | Load NEXT_TASK.md + PROJECT_STATUS.json |
+| execute_task      | Dispatch to module via keyword match    |
+| run_tests         | Run test suite (unittest / pytest)      |
+| update_report     | Write REPORT, SESSION, CHANGELOG        |
+| backup            | Copy project to `D:\Projects\Backup\`   |
+| git               | Commit + push to GitHub                 |
+| telegram          | Notify (skipped if not configured)      |
+| shutdown          | Optional OS shutdown (off by default)   |
 
 ## Permission Policy
 
@@ -88,8 +88,8 @@ See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for full architecture.
 
 ## Last Factory Run
 
-- run_id: `run-20260709-170422`
+- run_id: `run-20260709-170453`
 - status: success
-- phase: Sprint P008
-- duration: 7.3s
-- updated_utc: 2026-07-09 17:04
+- phase: Sprint P009
+- duration: 7.6s
+- updated_utc: 2026-07-09 17:05
