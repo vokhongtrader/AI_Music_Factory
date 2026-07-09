@@ -1,7 +1,7 @@
 {
   "project": "AI_Music_Factory",
   "date": "2026-07-09",
-  "phase": "Sprint P008",
+  "phase": "Sprint P009",
   "status": "running",
   "sprint0": {
     "directory_architecture_created": true,
@@ -81,11 +81,19 @@
   },
   "next": "Continue development on top of the published GitHub baseline",
   "last_run": {
-    "run_id": "run-20260709-170422",
+    "run_id": "run-20260709-170453",
     "status": "running",
     "notes": "Workflow in progress",
     "duration_seconds": 0.0,
     "progress": 50.0,
-    "updated_at_utc": "2026-07-09T17:04:25.389108"
+    "updated_at_utc": "2026-07-09T17:04:57.218104"
+  },
+  "sprint_p009": {
+    "vietnamese_mode": true,
+    "last_run_md": true,
+    "utf8_windows": true,
+    "start_factory_ps1_updated": true,
+    "factory_runner_rewritten": true,
+    "end_to_end_verified": true
   }
 }
